@@ -2,7 +2,7 @@
 Ce document démontre les commandes et les contructeurs qui peuvent être utilisé.
 <br></br>
 
-<h2>Contructeur</h2>
+<h3>Contructeur</h3>
 <table>
    <tr>
        <td>(string)</td>
@@ -13,9 +13,7 @@ Ce document démontre les commandes et les contructeurs qui peuvent être utilis
        <td>(Contenu, Titre)</td>
    </tr>
 </table>
-<br></br>
-<br></br>
-<h2>Commandes</h2>
+<h3>Commandes</h3>
 <table>
    <tr>
        <td>Show()</td>
