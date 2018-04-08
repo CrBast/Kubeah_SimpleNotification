@@ -1,12 +1,16 @@
 <h1>Utilisation de Kubeah_SimpleNotification.dll</h1>
-Ce document démontre les commandes et les paramètres qui peuvent être utilisé.
+Ce document démontre les commandes et les contructeurs qui peuvent être utilisé.
 <br></br>
 
-<h2>Paramètres</h2>
+<h2>Contructeur</h2>
 <table>
    <tr>
-       <td>...</td>
-       <td>...</td>
+       <td>(string)</td>
+       <td>(Contenu)</td>
+   </tr>
+   <tr>
+       <td>(string, string)</td>
+       <td>(Contenu, Titre)</td>
    </tr>
 </table>
 <br></br>
@@ -14,7 +18,7 @@ Ce document démontre les commandes et les paramètres qui peuvent être utilis�
 <h2>Commandes</h2>
 <table>
    <tr>
-       <td>...</td>
-       <td>...</td>
+       <td>Show()</td>
+       <td>Affiche la notification</td>
    </tr>
 </table>
