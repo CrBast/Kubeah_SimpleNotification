@@ -11,8 +11,9 @@ namespace Test_Kubeah_SimpleNotification
     {
         static void Main(string[] args)
         {
-            KNotification kNotification = new KNotification();
-            Console.WriteLine("<< KNotification >> object initialize");
+            KNotification kNotification = new KNotification("Temp", "Le Titre");
+            kNotification.Show();
+            Console.WriteLine("<< KNotification(string, string) >> object initialize");
             Console.Read();
         }
     }
