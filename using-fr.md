@@ -13,24 +13,35 @@ Le nom et l'extension du fichier n'ont pas d'importance car l'application prend 
    <th>Paramètre</th>
    <th>Exemple d'utilisation</th>
    <th>Valeur par défault</th>
-   <th>Format de valeur<th>
+   <th>Format de valeur</th>
+   <th>Information</th>
    <tr>
        <td>content</td>
        <td>&lsaquo;param name="content" value="Contenu de la notification"/&rsaquo;</td>
        <td>""</td>
        <td>String</td>
+      <td>Contenu</td>
    </tr>
    <tr>
        <td>title</td>
        <td>&lsaquo;param name="title" value="Titre de la notification"/&rsaquo;</td>
        <td>""</td>
        <td>String</td>
+      <td>Titre</td>
    </tr>
    <tr>
        <td>backgroundColor</td>
-       <td>&lsaquo;param name="backgroundColor" value="Titre de la notification"/&rsaquo;</td>
+       <td>&lsaquo;param name="backgroundColor" value="#000102"/&rsaquo;</td>
        <td>"#1F1F1F"</td>
        <td>HTML hexadecimal code</td>
+      <td>Couleur de l'arrière-plan</td>
+   </tr>
+   <tr>
+       <td>time</td>
+       <td>&lsaquo;param name="time" value="10"/&rsaquo;</td>
+       <td>"5"</td>
+       <td>Int (secondes)</td>
+      <td>Durée de l'affichage en seconde</td>
    </tr>
 </table>
 <br>
