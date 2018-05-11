@@ -60,8 +60,8 @@ Le nom et l'extension du fichier n'ont pas d'importance car l'application prend 
 </p>
 <br>
 <br>
-<h3>Application - Paramètres</h3>
-<h5>./NotificationApp.conf</h5>
+<h3>Notifications - Paramètres</h3>
+<h5>./NotificationApp.conf - Fichier format XML</h5>
 <table>
    <th>Paramètre</th>
    <th>Exemple d'utilisation</th>
@@ -74,5 +74,12 @@ Le nom et l'extension du fichier n'ont pas d'importance car l'application prend 
        <td>"false"</td>
        <td>Boolean</td>
       <td>Affichage des logs dans le fichier ".\Notification.log"</td>
+   </tr>
+   <tr>
+       <td>notificationFolder</td>
+       <td>&lsaquo;param name="notificationFolder" value=".\\temp\Notifications"/&rsaquo;</td>
+       <td>".\\Notifications"</td>
+       <td>String</td>
+      <td>Chemin du dossier notification</td>
    </tr>
 </table>
