@@ -58,3 +58,21 @@ Le nom et l'extension du fichier n'ont pas d'importance car l'application prend 
    <br>
    &lsaquo;/param&rsaquo;
 </p>
+<br>
+<br>
+<h3>Application - Paramètres</h3>
+<h5>./NotificationApp.conf</h5>
+<table>
+   <th>Paramètre</th>
+   <th>Exemple d'utilisation</th>
+   <th>Valeur par défault</th>
+   <th>Format de valeur</th>
+   <th>Information</th>
+   <tr>
+       <td>logsEnable</td>
+       <td>&lsaquo;param name="logEnable" value="true"/&rsaquo;</td>
+       <td>"false"</td>
+       <td>Boolean</td>
+      <td>Affichage des logs dans le fichier ".\Notification.log"</td>
+   </tr>
+</table>
