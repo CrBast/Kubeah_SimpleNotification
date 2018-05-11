@@ -1,4 +1,4 @@
-<h1>Utilisation de Kubeah_SimpleNotification.dll</h1>
+<h1>Documentation FR de Kubeah_SimpleNotification</h1>
 <br>
 <h4>L'application utilise des fichier au format XML.
 <br>
