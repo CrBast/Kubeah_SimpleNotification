@@ -1,6 +1,5 @@
 <h1>Utilisation de Kubeah_SimpleNotification.dll</h1>
 <br>
-<br>
 <h4>L'application utilise des fichier au format XML.
 <br>
 Les paramètres sont listés ci-dessous.
