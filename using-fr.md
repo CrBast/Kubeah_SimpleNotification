@@ -45,7 +45,6 @@ Le nom et l'extension du fichier n'ont pas d'importance car l'application prend 
    </tr>
 </table>
 <br>
-<br>
 <h3>Exemple de fichier XML</h3>
 <p>
    &lsaquo;?xml version="1.0" encoding="utf-8"?&rsaquo;
@@ -58,6 +57,7 @@ Le nom et l'extension du fichier n'ont pas d'importance car l'application prend 
    <br>
    &lsaquo;/param&rsaquo;
 </p>
+<br>
 <br>
 <br>
 <h3>Notifications - Paramètres</h3>
@@ -81,5 +81,12 @@ Le nom et l'extension du fichier n'ont pas d'importance car l'application prend 
        <td>".\\Notifications"</td>
        <td>String</td>
       <td>Chemin du dossier notification</td>
+   </tr>
+   <tr>
+       <td><i>styleFile (Indisponible pour le moment)</i></td>
+       <td><i>&lsaquo;param name="styleFile" value=".\\styleNotification.xml"/&rsaquo;</i></td>
+       <td><i>""</i></td>
+       <td><i>String</i></td>
+      <td><i>Chemin fichier de style des notifications</i></td>
    </tr>
 </table>
