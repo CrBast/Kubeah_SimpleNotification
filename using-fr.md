@@ -76,7 +76,7 @@ Le nom et l'extension du fichier n'ont pas d'importance car l'application prend 
       <td>Affichage des logs dans le fichier ".\Notification.log"</td>
    </tr>
    <tr>
-       <td>notificationFolder</td>
+       <td>notificationsFolder</td>
        <td>&lsaquo;param name="notificationFolder" value=".\\temp\Notifications"/&rsaquo;</td>
        <td>".\\Notifications"</td>
        <td>String</td>
@@ -88,5 +88,12 @@ Le nom et l'extension du fichier n'ont pas d'importance car l'application prend 
        <td><i>""</i></td>
        <td><i>String</i></td>
       <td><i>Chemin fichier de style des notifications</i></td>
+   </tr>
+   <tr>
+       <td><i>saveNotifications (Indisponible pour le moment)</i></td>
+       <td><i>&lsaquo;param name="saveNotifications" value="true"/&rsaquo;</i></td>
+       <td><i>"false"</i></td>
+       <td><i>Boolean</i></td>
+      <td><i>Conservation des fichiers après l'affichage de celui-ci</i></td>
    </tr>
 </table>
