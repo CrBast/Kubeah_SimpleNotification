@@ -14,7 +14,7 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
 <h3>Fichier XML (Notification) - Paramètres</h3>
 <a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/notification_sample.xml">Exemple d'un fichier de notification</a>
 <br>
-<table>
+<table id="notification">
    <th>Paramètre</th>
    <th>Exemple d'utilisation</th>
    <th>Valeur par défault</th>
@@ -107,7 +107,9 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
 <p>Ce fichier est utilisé pour ne pas avoir besoin de remettre à chaque fois les mêmes paramètres dans les différents fichiers.</p>
 <p>Utilisation : Dans le fichier de configuration de l'application, il est nécessaire d'indiquer le chemin de celui-ci.
 <br>
-   Attention : La configuration présente dans ce fichier prime sur celle présente sur les fichier XML de notification.
+   Attention : La configuration présente dans ce fichier prime sur celle présente sur les 
+<a href="#notification">fichier XML de notification</a>.
+
 <br>
    Les paramètres sont les mêmes que ceux du fichier XML de notification.
 </p>
