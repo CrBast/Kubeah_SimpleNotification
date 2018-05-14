@@ -34,6 +34,7 @@
             this.pbxArrow = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.tbxContent = new System.Windows.Forms.TextBox();
+            this.topMost = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxArrow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(353, 97);
             this.Controls.Add(this.tbxContent);
@@ -104,6 +106,7 @@
         private System.Windows.Forms.PictureBox pbxArrow;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.TextBox tbxContent;
+        private System.Windows.Forms.Timer topMost;
     }
 }
 

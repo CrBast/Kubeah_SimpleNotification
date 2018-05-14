@@ -10,40 +10,42 @@
  * Example : 
  * https://github.com/CrBast/Kubeah_SimpleNotification/edit/master/using-fr.md
  * 
- * Please visit https://github.com/CrBast/Kubeah_SimpleNotification/edit/master/using-fr.md
+ * 
+ * 
  * for more informations about notifications
+ * Please visit https://github.com/CrBast/Kubeah_SimpleNotification/edit/master/using-fr.md
+ *
  * 
- * 
- * https://github.com/CrBast/KubeahChat 
  * 
  * APPLICATION LICENSE
- * GNU General Public License v3.0
- * https://github.com/CrBast/KubeahChat/blob/master/LICENSE
+ * MIT License
+ * https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/LICENSE
  * */
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
-using System.IO;
 
 namespace Windows_Notification
 {
     public partial class Notification : Form
     {
-        public Boolean logsEnable = false;
+        public Boolean logsEnable = false;//Default = false
+        public Boolean saveNotifications = false;//Default = false
+        public Boolean styleFile = false;
+        public string styleFilePath = "";
+        public string directoryPath = ".\\Notifications";
         public Notification()
         {
             InitializeComponent();
-            // GUI
+
+            //Hidde program in taskbar
             this.ShowInTaskbar = false;
-            
+
+            //Displays the window at the bottom of the screen
             Rectangle workingArea = Screen.GetWorkingArea(this);
             this.Location = new Point(workingArea.Right - Size.Width, workingArea.Bottom - Size.Height - 7);
         }
@@ -59,19 +61,10 @@ namespace Windows_Notification
         }
 
         private void Notification_Load(object sender, EventArgs e)
-        {
-            /*
-             * Create log file
-             */
-            if (!File.Exists($".\\Notification.log"))
-            {
-                File.Create($".\\Notification.log");
-            }
-
+        {            
             /*
              * Basic initialization
             */
-            string directoryPath = ".\\Notifications";
             lblTitle.Text = "";
             tbxContent.Text = "";
             timer.Interval = 5000;
@@ -94,6 +87,16 @@ namespace Windows_Notification
                         if (xmlNode.Attributes["name"].Value == "logsEnable")
                         {
                             logsEnable = Convert.ToBoolean(xmlNode.Attributes["value"].Value);
+                            /*
+                             * Create log file
+                             */
+                            if (logsEnable)
+                            {
+                                if (!File.Exists($".\\Notification.log"))
+                                {
+                                    File.Create($".\\Notification.log");
+                                }
+                            }
                         }
 
                         if (xmlNode.Attributes["name"].Value == "notificationsFolder")
@@ -101,11 +104,19 @@ namespace Windows_Notification
                             directoryPath = xmlNode.Attributes["value"].Value;
                         }
 
-                        // TODO
+                        if (xmlNode.Attributes["name"].Value == "saveNotifications")
+                        {
+                            saveNotifications = Convert.ToBoolean(xmlNode.Attributes["value"].Value);
+                        }
                         if (xmlNode.Attributes["name"].Value == "styleFile")
                         {
-                            /* TODO */
+                            if (xmlNode.Attributes["value"].Value != "")
+                            {
+                                styleFile = true;
+                                styleFilePath = xmlNode.Attributes["value"].Value;
+                            }
                         }
+
                     }
                 }
                 catch(Exception exc)
@@ -117,17 +128,59 @@ namespace Windows_Notification
             {
                 writeLogs($"{DateTime.Now} \r   NotificationApp.conf is missing", logsEnable);
             }
+            var directory = new DirectoryInfo(directoryPath);
 
+            // Select the last file on the directory
             try
             {
-                var directory = new DirectoryInfo(directoryPath);
-
-                // Select the last file on the directory
                 var myFile = (from f in directory.GetFiles() orderby f.LastWriteTime descending select f).First();
+                getNotificationConfig(myFile.FullName);
+                if (!saveNotifications)
+                {
+                    myFile.Delete();
+                }
+                if (styleFile)//Apply the style file
+                {
+                    getNotificationConfig(styleFilePath);
+                }
+                timer.Enabled = true;
+            }
+            catch (Exception exc)
+            {
+                writeLogs($"{ DateTime.Now} \r   { exc.ToString()}", logsEnable);
+                this.Close();
+            }
 
+
+        }
+        public void writeLogs(string text, bool state)
+        {
+            if (state)
+            { 
+                try
+                {
+                    TextWriter tw = new StreamWriter(".\\Notification.log", true);
+                    // write a line of text to the file
+                    tw.WriteLine(text + "\r\n");
+                    // close the stream
+                    tw.Close();
+                }
+                catch {}
+            }
+        }
+
+        private void topMost_Tick(object sender, EventArgs e)
+        {
+            //Show the form at the forefront
+            this.TopMost = true;
+        }
+        public void getNotificationConfig(string filePath)
+        {
+            try
+            {
                 // Create XML file connexion
                 XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load(myFile.FullName);
+                xmlDoc.Load(filePath);
 
                 foreach (XmlNode xmlNode in xmlDoc.DocumentElement)
                 {
@@ -155,30 +208,21 @@ namespace Windows_Notification
                     {
                         timer.Interval = Convert.ToInt32(xmlNode.Attributes["value"].Value) * 1000;
                     }
+
+                    if (xmlNode.Attributes["name"].Value == "fontColor")
+                    {
+                        Color color = System.Drawing.ColorTranslator.FromHtml(xmlNode.Attributes["value"].Value);
+                        lblTitle.ForeColor = color;
+                        tbxContent.ForeColor = color;
+                    }
                 }
-                myFile.Delete();
-                timer.Enabled = true;
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 writeLogs($"{ DateTime.Now} \r   { exc.ToString()}", logsEnable);
                 this.Close();
             }
-        }
-        public static void writeLogs(string text, bool state)
-        {
-            if (state)
-            { 
-                try
-                {
-                    TextWriter tw = new StreamWriter(".\\Notification.log", true);
-                    // write a line of text to the file
-                    tw.WriteLine(text + "\r\n");
-                    // close the stream
-                    tw.Close();
-                }
-                catch { }
-            }
+
         }
     }
 }

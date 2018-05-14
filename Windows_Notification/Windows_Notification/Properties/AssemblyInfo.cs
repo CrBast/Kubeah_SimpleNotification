@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Windows_Notification")]
-[assembly: AssemblyDescription("https://github.com/CrBast/KubeahChat")]
+[assembly: AssemblyDescription("https://github.com/CrBast/Kubeah_SimpleNotification")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Windows_Notification")]
-[assembly: AssemblyCopyright("Kubeah! Open Source - GPL-3.0")]
+[assembly: AssemblyCopyright("Kubeah! Open Source - MIT License")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
