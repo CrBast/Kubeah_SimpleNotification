@@ -6,15 +6,15 @@ Pour chaque nouvelle notification, il est nécessaire d'exécuter l'application.
 <br>
 L'application utilise des fichier au format XML pour la création des notifications.
 <br>
-Les paramètres sont listés ci-dessous.
+Les paramètres sont <a href="#notification">listés ci-dessous</a>.
 <br>
 Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application prend le dernier fichier créé dans le répertoire concerné.
 </h4>
 <br>
-<h3>Fichier XML (Notification) - Paramètres</h3>
+<h3 id="notification">Fichier XML (Notification) - Paramètres</h3>
 <a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/notification_sample.xml">Exemple d'un fichier de notification</a>
 <br>
-<table id="notification">
+<table>
    <th>Paramètre</th>
    <th>Exemple d'utilisation</th>
    <th>Valeur par défault</th>
@@ -107,8 +107,7 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
 <p>Ce fichier est utilisé pour ne pas avoir besoin de remettre à chaque fois les mêmes paramètres dans les différents fichiers.</p>
 <p>Utilisation : Dans le fichier de configuration de l'application, il est nécessaire d'indiquer le chemin de celui-ci.
 <br>
-   Attention : La configuration présente dans ce fichier prime sur celle présente sur les 
-<a href="#notification">fichier XML de notification</a>.
+   Attention : La configuration présente dans ce fichier prime sur celle présente sur les <a href="#notification">fichier XML de notification</a>.
 
 <br>
    Les paramètres sont les mêmes que ceux du fichier XML de notification.
