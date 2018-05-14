@@ -94,10 +94,10 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
       <td><i>Chemin fichier de style des notifications</i></td>
    </tr>
    <tr>
-       <td><i>saveNotifications (Indisponible pour le moment)</i></td>
-       <td><i>&lsaquo;param name="saveNotifications" value="true"/&rsaquo;</i></td>
-       <td><i>"false"</i></td>
-       <td><i>Boolean</i></td>
-      <td><i>Conservation des fichiers après l'affichage de celui-ci</i></td>
+       <td>saveNotifications</td>
+       <td>&lsaquo;param name="saveNotifications" value="true"/&rsaquo;</td>
+       <td>"false"</td>
+       <td>Boolean</td>
+      <td>Conservation des fichiers après l'affichage de celui-ci</td>
    </tr>
 </table>
