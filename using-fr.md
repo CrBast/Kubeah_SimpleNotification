@@ -1,10 +1,14 @@
 <h1>Documentation FR de Kubeah_SimpleNotification</h1>
 <br>
-<h4>L'application utilise des fichier au format XML.
+<h4>
+Pour chaque nouvelle notification, il est nécessaire d'exécuter l'application. L'application prend toujours le dernier fichier XML de notification créée.
+<br>
+<br>
+L'application utilise des fichier au format XML pour la création des notifications.
 <br>
 Les paramètres sont listés ci-dessous.
 <br>
-Le nom et l'extension du fichier n'ont pas d'importance car l'application prend le dernier fichier créé dans le répertoire concerné.
+Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application prend le dernier fichier créé dans le répertoire concerné.
 </h4>
 <br></br>
 
