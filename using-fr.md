@@ -41,6 +41,13 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
       <td>Couleur de l'arrière-plan</td>
    </tr>
    <tr>
+       <td>fontColor</td>
+       <td>&lsaquo;param name="fontColor" value="#000102"/&rsaquo;</td>
+       <td>"#FFF"</td>
+       <td>HTML hexadecimal code</td>
+      <td>Couleur du texte</td>
+   </tr>
+   <tr>
        <td>time</td>
        <td>&lsaquo;param name="time" value="10"/&rsaquo;</td>
        <td>"5"</td>
