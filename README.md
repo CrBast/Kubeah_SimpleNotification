@@ -32,5 +32,5 @@
       <li>The application uses the last file created in the directory</li>
     </ol>
   </li>
-  <li>you just have to repeat the steps from point 2</li>
+  <li>To create a new notification you just have to repeat the steps from point 2</li>
 </ol>
