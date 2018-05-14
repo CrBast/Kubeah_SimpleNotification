@@ -103,6 +103,7 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
 </table>
 <br>
 <h3>Fichier XML de style</h3>
+<a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/NotificationsStyle.xml">Exemple d'un fichier de style</a>
 <p>Ce fichier est utilisé pour ne pas avoir besoin de remettre à chaque fois les mêmes paramètres dans les différents fichiers.</p>
 <p>Utilisation : Dans le fichier de configuration de l'application, il est nécessaire d'indiquer le chemin de celui-ci.
 <br>
