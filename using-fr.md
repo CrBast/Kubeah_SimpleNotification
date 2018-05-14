@@ -94,11 +94,14 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
       <td>Chemin du dossier notification</td>
    </tr>
    <tr>
-       <td><i>styleFile (Indisponible pour le moment)</i></td>
-       <td><i>&lsaquo;param name="styleFile" value=".\\styleNotification.xml"/&rsaquo;</i></td>
-       <td><i>""</i></td>
-       <td><i>String</i></td>
-      <td><i>Chemin fichier de style des notifications</i></td>
+       <td>styleFile</td>
+       <td>&lsaquo;param name="styleFile" value=".\\styleNotification.xml"/&rsaquo;</td>
+       <td>""</td>
+       <td>String</td>
+      <td>Chemin fichier de style des notifications
+      <br>
+         !!! Attention voir en dessous
+      </td>
    </tr>
    <tr>
        <td>saveNotifications</td>
@@ -108,3 +111,11 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
       <td>Conservation des fichiers après l'affichage de celui-ci</td>
    </tr>
 </table>
+<br>
+<h3>Fichier XML de style</h3>
+<p>Utilisation : Dans le fichier de configuration de l'application, il est nécessaire d'indiquer le chemin de celui-ci.
+<br>
+   Attention : La configuration présente dans ce fichier prime sur celle présente sur les fichier XML de notification.
+<br>
+   Les paramètres sont les mêmes que ceux du fichier XML de notification.
+</p>
