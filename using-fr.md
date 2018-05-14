@@ -1,4 +1,4 @@
-<h1>Documentation FR de Kubeah_SimpleNotification</h1>
+<h1>Documentation Française - Kubeah_SimpleNotification</h1>
 <br>
 <h4>
 Pour chaque nouvelle notification, il est nécessaire d'exécuter l'application. L'application prend toujours le dernier fichier XML de notification créée.
@@ -103,6 +103,7 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
 </table>
 <br>
 <h3>Fichier XML de style</h3>
+<p>Ce fichier est utilisé pour ne pas avoir besoin de remettre à chaque fois les mêmes paramètres dans les différents fichiers.</p>
 <p>Utilisation : Dans le fichier de configuration de l'application, il est nécessaire d'indiquer le chemin de celui-ci.
 <br>
    Attention : La configuration présente dans ce fichier prime sur celle présente sur les fichier XML de notification.
