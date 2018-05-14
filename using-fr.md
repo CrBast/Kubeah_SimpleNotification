@@ -12,7 +12,7 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
 </h4>
 <br>
 <h3>Fichier XML (Notification) - Paramètres</h3>
-<a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/notification_sample.xml">Exemple d'un fichier de notification</a></h3>
+<a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/notification_sample.xml">Exemple d'un fichier de notification</a>
 <br>
 <table>
    <th>Paramètre</th>
@@ -57,25 +57,12 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
    </tr>
 </table>
 <br>
-<h3>Exemple de fichier XML</h3>
-<p>
-   &lsaquo;?xml version="1.0" encoding="utf-8"?&rsaquo;
-   <br>
-   &lsaquo;param&rsaquo;
-   <br>
-      &emsp;&emsp;&lsaquo;param name="content" value="Contenu de la notification"/&rsaquo;
-   <br>
-      &emsp;&emsp;&lsaquo;param name="title" value="Titre de la notification"/&rsaquo;
-   <br>
-   &lsaquo;/param&rsaquo;
-</p>
-<br>
 <br>
 <br>
 <h3>Paramètres de l'application</h3>
-<h5>./NotificationApp.conf - Fichier format XML
+<h5>./NotificationApp.conf - Fichier format XML</h5>
 <br>
-<a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/NotificationApp.conf">Exemple d'un fichier de configuration</a></h5>
+<a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/NotificationApp.conf">Exemple d'un fichier de configuration</a>
 <table>
    <th>Paramètre</th>
    <th>Exemple d'utilisation</th>
