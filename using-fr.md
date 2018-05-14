@@ -10,9 +10,10 @@ Les paramètres sont listés ci-dessous.
 <br>
 Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application prend le dernier fichier créé dans le répertoire concerné.
 </h4>
-<br></br>
-
-<h3>Fichier XML - Paramètres</h3>
+<br>
+<h3>Fichier XML (Notification) - Paramètres</h3>
+<a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/notification_sample.xml">Exemple d'un fichier de notification</a></h3>
+<br>
 <table>
    <th>Paramètre</th>
    <th>Exemple d'utilisation</th>
@@ -71,8 +72,10 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
 <br>
 <br>
 <br>
-<h3>Notifications - Paramètres</h3>
-<h5>./NotificationApp.conf - Fichier format XML</h5>
+<h3>Paramètres de l'application</h3>
+<h5>./NotificationApp.conf - Fichier format XML
+<br>
+<a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/NotificationApp.conf">Exemple d'un fichier de configuration</a></h5>
 <table>
    <th>Paramètre</th>
    <th>Exemple d'utilisation</th>
