@@ -1,7 +1,7 @@
 # Kubeah_SimpleNotification - Windows
 <h4>Simple Windows Notifications creator</h4>
 <br>
-<a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/using-fr.md">French documentation</a>
+<a href="./using-fr.md">French documentation</a>
 <br>
 <h3>Integration</h3>
 <ol> 
