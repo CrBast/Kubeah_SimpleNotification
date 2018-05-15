@@ -1,6 +1,3 @@
----
-layout: default
----
 <h1>Documentation Française - Kubeah_SimpleNotification</h1>
 <br>
 <h4>
