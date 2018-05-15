@@ -1,8 +1,6 @@
 # Kubeah_SimpleNotification - Windows
 <h4>Simple Windows Notifications creator</h4>
 <br>
-<a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/using-fr.md">French documentation</a>
-<br>
 <h3>Integration</h3>
 <ol> 
   <li><a href="https://github.com/CrBast/Kubeah_SimpleNotification/releases">Download the latest version</a></li> 
@@ -34,3 +32,9 @@
   </li>
   <li>To create a new notification you just have to repeat the steps from point 2</li>
 </ol>
+<br>
+<h3>Documentation</h3>
+ <ul>
+  <li><h4><a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/using-fr.md">French documentation</a></h4>
+  </li>
+</ul> 
