@@ -1,5 +1,6 @@
 # Kubeah_SimpleNotification - Windows
 <h4>Simple Windows Notifications creator</h4>
+<img src="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/files/introduction.gif">
 <br>
 <h3>Integration</h3>
 <ol> 
