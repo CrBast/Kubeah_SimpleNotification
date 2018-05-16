@@ -121,12 +121,12 @@ namespace Windows_Notification
                 }
                 catch(Exception exc)
                 {
-                    writeLogs($"{DateTime.Now} \r   { exc.ToString()}", logsEnable);
+                    writeLogs($"{exc.Message}", logsEnable);
                 }   
             }
             catch
             {
-                writeLogs($"{DateTime.Now} \r   NotificationApp.conf is missing", logsEnable);
+                writeLogs($"NotificationApp.conf is missing", logsEnable);
             }
             var directory = new DirectoryInfo(directoryPath);
 
@@ -147,7 +147,7 @@ namespace Windows_Notification
             }
             catch (Exception exc)
             {
-                writeLogs($"{ DateTime.Now} \r   { exc.ToString()}", logsEnable);
+                writeLogs($"{exc.Message}", logsEnable);
                 this.Close();
             }
 
@@ -161,7 +161,7 @@ namespace Windows_Notification
                 {
                     TextWriter tw = new StreamWriter(".\\Notification.log", true);
                     // write a line of text to the file
-                    tw.WriteLine(text + "\r\n");
+                    tw.WriteLine($"{ DateTime.Now}   :   { text }");
                     // close the stream
                     tw.Close();
                 }
@@ -219,7 +219,7 @@ namespace Windows_Notification
             }
             catch (Exception exc)
             {
-                writeLogs($"{ DateTime.Now} \r   { exc.ToString()}", logsEnable);
+                writeLogs($"{ DateTime.Now} \r   { exc.Message}", logsEnable);
                 this.Close();
             }
 
