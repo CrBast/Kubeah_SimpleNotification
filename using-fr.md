@@ -55,6 +55,13 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
        <td>Int (secondes)</td>
       <td>Durée de l'affichage en seconde</td>
    </tr>
+   <tr>
+       <td><i>iconPath (Prochaine release)</i></td>
+       <td>&lsaquo;param name="iconPath" value="./img.png"/&rsaquo;</td>
+       <td>""</td>
+       <td>String (Chemin de fichier)</td>
+      <td>Icon de la notification. Les images sont au format 32x32</td>
+   </tr>
 </table>
 <br>
 <br>
