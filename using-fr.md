@@ -42,6 +42,13 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
       <td>Couleur de l'arrière-plan</td>
    </tr>
    <tr>
+       <td><i>opacity (Prochaine release)</i></td>
+       <td>&lsaquo;param name="opacity" value="95"/&rsaquo;</td>
+       <td>"0"</td>
+       <td>Int</td>
+      <td>Opacité de la notification</td>
+   </tr>
+   <tr>
        <td>fontColor</td>
        <td>&lsaquo;param name="fontColor" value="#000102"/&rsaquo;</td>
        <td>"#FFF"</td>
