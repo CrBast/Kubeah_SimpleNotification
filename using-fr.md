@@ -43,10 +43,10 @@ Le nom et l'extension des fichiers XML n'ont pas d'importance car l'application 
    </tr>
    <tr>
        <td><i>opacity (Prochaine release)</i></td>
-       <td>&lsaquo;param name="opacity" value="95"/&rsaquo;</td>
-       <td>"0"</td>
-       <td>Int</td>
-      <td>Opacité de la notification</td>
+       <td>&lsaquo;param name="opacity" value="0,8"/&rsaquo;</td>
+       <td>"1,0"</td>
+       <td>Double (0,0 à 1,0)</td>
+      <td>Opacité de la notification. Les valeurs s'écrivent avec une virgule.</td>
    </tr>
    <tr>
        <td>fontColor</td>
