@@ -7,13 +7,13 @@
   <li><a href="https://github.com/CrBast/Kubeah_SimpleNotification/releases">Download the latest version</a></li> 
   <li>Create config
     <ol>
-      <li><a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/using-fr.md">French documentation</a></li>
+      <li><a href="#Documentation">Documentation</a></li>
       <li><a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/NotificationApp.conf">Example</a></li>
     </ol>
   </li> 
   <li>(Not necessary) Create style file</li>
   <ol>
-      <li><a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/using-fr.md">French documentation</a></li>
+      <li><a href="#Documentation">Documentation</a></li>
     </ol>
 </ol>
 <br>
@@ -22,7 +22,7 @@
   <li>You must define the notifications folder path in the config file</li>
   <li>Create notification file
   <ol>
-      <li><a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/using-fr.md">French documentation</a></li>
+      <li><a href="#Documentation">Documentation</a></li>
       <li><a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/notification_sample.xml">Example</a></li>
     </ol>
   </li>
@@ -34,7 +34,7 @@
   <li>To create a new notification you just have to repeat the steps from point 2</li>
 </ol>
 <br>
-<h3>Documentation</h3>
+<h3 id="Documentation">Documentation</h3>
  <ul>
   <li><h4><a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/using-fr.md">French documentation</a></h4>
   </li>
