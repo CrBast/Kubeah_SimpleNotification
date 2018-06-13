@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <param>
 	<param name="content" value="It's the content"/>
-	<param name="content" value="Impressive title"/>
+	<param name="title" value="Impressive title"/>
 	<param name="time" value="9"/>
 </param>
