@@ -35,9 +35,4 @@
 </ol>
 <br>
 <h3 id="Documentation">Documentation</h3>
- <ul>
-  <li><h4><a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/using-en.md">English documentation</a></h4>
-  </li>
-  <li><h4><a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/using-fr.md">French documentation</a></h4>
-  </li>
-</ul> 
+<h4><a href="https://github.com/CrBast/Kubeah_SimpleNotification/wiki">The wiki</a></h4>
