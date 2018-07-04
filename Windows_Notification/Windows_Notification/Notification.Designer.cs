@@ -35,14 +35,16 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.tbxContent = new System.Windows.Forms.TextBox();
             this.topMost = new System.Windows.Forms.Timer(this.components);
+            this.pbxLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArrow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(17, 9);
+            this.lblTitle.Location = new System.Drawing.Point(13, 7);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(51, 16);
             this.lblTitle.TabIndex = 2;
@@ -67,14 +69,29 @@
             // 
             this.tbxContent.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxContent.Enabled = false;
-            this.tbxContent.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxContent.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxContent.ForeColor = System.Drawing.Color.White;
-            this.tbxContent.Location = new System.Drawing.Point(20, 33);
+            this.tbxContent.Location = new System.Drawing.Point(16, 27);
             this.tbxContent.Multiline = true;
             this.tbxContent.Name = "tbxContent";
             this.tbxContent.ReadOnly = true;
             this.tbxContent.Size = new System.Drawing.Size(301, 52);
             this.tbxContent.TabIndex = 4;
+            // 
+            // topMost
+            // 
+            this.topMost.Enabled = true;
+            this.topMost.Tick += new System.EventHandler(this.topMost_Tick);
+            // 
+            // pbxLogo
+            // 
+            this.pbxLogo.Location = new System.Drawing.Point(10, 9);
+            this.pbxLogo.Margin = new System.Windows.Forms.Padding(0);
+            this.pbxLogo.Name = "pbxLogo";
+            this.pbxLogo.Size = new System.Drawing.Size(32, 32);
+            this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLogo.TabIndex = 5;
+            this.pbxLogo.TabStop = false;
             // 
             // Notification
             // 
@@ -83,6 +100,7 @@
             this.BackColor = System.Drawing.Color.DimGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(353, 97);
+            this.Controls.Add(this.pbxLogo);
             this.Controls.Add(this.tbxContent);
             this.Controls.Add(this.pbxArrow);
             this.Controls.Add(this.lblTitle);
@@ -96,6 +114,7 @@
             this.Text = "frmNotification";
             this.Load += new System.EventHandler(this.Notification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxArrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,6 +126,7 @@
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.TextBox tbxContent;
         private System.Windows.Forms.Timer topMost;
+        private System.Windows.Forms.PictureBox pbxLogo;
     }
 }
 

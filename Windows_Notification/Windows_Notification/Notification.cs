@@ -8,12 +8,12 @@
  * The files contained in the 
  * directory must be in XML format
  * Example : 
- * https://github.com/CrBast/Kubeah_SimpleNotification/edit/master/using-fr.md
+ * https://github.com/CrBast/Kubeah_SimpleNotification/wiki/English-Documentation---OFFICIAL
  * 
  * 
  * 
  * for more informations about notifications
- * Please visit https://github.com/CrBast/Kubeah_SimpleNotification/edit/master/using-fr.md
+ * Please visit https://github.com/CrBast/Kubeah_SimpleNotification/wiki/English-Documentation---OFFICIAL
  *
  * 
  * 
@@ -34,6 +34,7 @@ namespace Windows_Notification
     public partial class Notification : Form
     {
         public Boolean logsEnable = false;//Default = false
+        public string logsPath = "";
         public Boolean saveNotifications = false;//Default = false
         public Boolean styleFile = false;
         public string styleFilePath = "";
@@ -61,10 +62,16 @@ namespace Windows_Notification
         }
 
         private void Notification_Load(object sender, EventArgs e)
-        {            
+        {
             /*
              * Basic initialization
             */
+            pbxLogo.Visible = false;
+            lblTitle.Width = 17;
+            lblTitle.Height = 9;
+            tbxContent.Width = 20;
+            tbxContent.Height = 33;
+            tbxContent.Size = new System.Drawing.Size(301, 52);
             lblTitle.Text = "";
             tbxContent.Text = "";
             timer.Interval = 5000;
@@ -84,37 +91,33 @@ namespace Windows_Notification
                 {
                     foreach (XmlNode xmlNode in xmlConfig.DocumentElement)
                     {
-                        if (xmlNode.Attributes["name"].Value == "logsEnable")
+                        switch (xmlNode.Attributes["name"].Value)
                         {
-                            logsEnable = Convert.ToBoolean(xmlNode.Attributes["value"].Value);
-                            /*
-                             * Create log file
-                             */
-                            if (logsEnable)
-                            {
-                                if (!File.Exists($".\\Notification.log"))
+                            case "fileLogsPath":
+                                logsEnable = true;
+                                logsPath = xmlNode.Attributes["value"].Value;
+                                /*
+                                 * Create logs file
+                                 */
+
+                                if (!File.Exists($"{logsPath}"))
                                 {
-                                    File.Create($".\\Notification.log");
+                                    File.Create($"{logsPath}");
                                 }
-                            }
-                        }
-
-                        if (xmlNode.Attributes["name"].Value == "notificationsFolder")
-                        {
-                            directoryPath = xmlNode.Attributes["value"].Value;
-                        }
-
-                        if (xmlNode.Attributes["name"].Value == "saveNotifications")
-                        {
-                            saveNotifications = Convert.ToBoolean(xmlNode.Attributes["value"].Value);
-                        }
-                        if (xmlNode.Attributes["name"].Value == "styleFile")
-                        {
-                            if (xmlNode.Attributes["value"].Value != "")
-                            {
-                                styleFile = true;
-                                styleFilePath = xmlNode.Attributes["value"].Value;
-                            }
+                                break;
+                            case "notificationsFolder" :
+                                directoryPath = xmlNode.Attributes["value"].Value;
+                                break;
+                            case "saveNotifications":
+                                saveNotifications = Convert.ToBoolean(xmlNode.Attributes["value"].Value);
+                                break;
+                            case "styleFile":
+                                if (xmlNode.Attributes["value"].Value != "")
+                                {
+                                    styleFile = true;
+                                    styleFilePath = xmlNode.Attributes["value"].Value;
+                                }
+                                break;
                         }
 
                     }
@@ -159,7 +162,7 @@ namespace Windows_Notification
             { 
                 try
                 {
-                    TextWriter tw = new StreamWriter(".\\Notification.log", true);
+                    TextWriter tw = new StreamWriter($"{logsPath}", true);
                     // write a line of text to the file
                     tw.WriteLine($"{ DateTime.Now}   :   { text }");
                     // close the stream
@@ -178,51 +181,90 @@ namespace Windows_Notification
         {
             try
             {
-                // Create XML file connexion
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load(filePath);
-
-                foreach (XmlNode xmlNode in xmlDoc.DocumentElement)
+                try
                 {
-                    if (xmlNode.Attributes["name"].Value == "content")
+                    // Create XML file connexion
+                    foreach (XmlNode xmlNode in xmlDoc.DocumentElement)
                     {
-                        tbxContent.Text = xmlNode.Attributes["value"].Value;
-                    }
-
-                    if (xmlNode.Attributes["name"].Value == "title")
-                    {
-                        lblTitle.Text = xmlNode.Attributes["value"].Value;
-                    }
-
-                    if (xmlNode.Attributes["name"].Value == "backgroundColor")
-                    {
-                        try
+                        switch (xmlNode.Attributes["name"].Value)
                         {
-                            Color color = System.Drawing.ColorTranslator.FromHtml(xmlNode.Attributes["value"].Value);
-                            this.BackColor = color;
-                            tbxContent.BackColor = color;
-                        }
-                        catch { }
-                    }
-                    if (xmlNode.Attributes["name"].Value == "time")
-                    {
-                        timer.Interval = Convert.ToInt32(xmlNode.Attributes["value"].Value) * 1000;
-                    }
+                            case "content":
+                                try { tbxContent.Text = xmlNode.Attributes["value"].Value; }
+                                catch { writeLogs("Minor  =>  Error with parameter 'content'", logsEnable); }
 
-                    if (xmlNode.Attributes["name"].Value == "fontColor")
-                    {
-                        Color color = System.Drawing.ColorTranslator.FromHtml(xmlNode.Attributes["value"].Value);
-                        lblTitle.ForeColor = color;
-                        tbxContent.ForeColor = color;
+                                break;
+
+                            case "title":
+                                try { lblTitle.Text = xmlNode.Attributes["value"].Value; }
+                                catch { writeLogs("Minor  =>  Error with parameter 'title'", logsEnable); }
+
+                                break;
+
+                            case "backgroundColor":
+                                try
+                                {
+                                    Color color2 = System.Drawing.ColorTranslator.FromHtml(xmlNode.Attributes["value"].Value);
+                                    this.BackColor = color2;
+                                    tbxContent.BackColor = color2;
+                                }
+                                catch { writeLogs("Minor  =>  Error with parameter 'backgroundColor'", logsEnable); }
+                                break;
+
+                            case "opacity":
+                                try { this.Opacity = Convert.ToDouble(xmlNode.Attributes["value"].Value); }
+                                catch { writeLogs("Minor  =>  Error with parameter 'opacity'", logsEnable); }
+
+                                break;
+
+                            case "time":
+                                try { timer.Interval = Convert.ToInt32(xmlNode.Attributes["value"].Value) * 1000; }
+                                catch { writeLogs("Minor  =>  Error with parameter 'time'", logsEnable); }
+                                break;
+
+                            case "fontColor":
+                                try
+                                {
+                                    Color color = System.Drawing.ColorTranslator.FromHtml(xmlNode.Attributes["value"].Value);
+                                    lblTitle.ForeColor = color;
+                                    tbxContent.ForeColor = color;
+                                }
+                                catch
+                                {
+                                    writeLogs("Minor  =>  Error with parameter 'fontColor'", logsEnable);
+                                }
+                                break;
+
+                            case "iconPath":
+                                try
+                                {
+                                    pbxLogo.ImageLocation = xmlNode.Attributes["value"].Value;
+                                    pbxLogo.Visible = true;
+                                    this.Refresh();
+                                    lblTitle.Location = new Point(51, 7);
+                                    tbxContent.Location = new Point(54, 25);
+                                    tbxContent.Size = new System.Drawing.Size(246, 52);
+                                    pbxLogo.Location = new Point(10, 9);
+                                }
+                                catch
+                                {
+                                    writeLogs("Minor  =>  Error with parameter 'iconPath'", logsEnable);
+                                }
+
+                                break;
+                        }
                     }
                 }
+                catch (Exception exc)
+                {
+                    writeLogs($"{exc.Message}", logsEnable);
+                    this.Close();
+                }
             }
-            catch (Exception exc)
-            {
-                writeLogs($"{ DateTime.Now} \r   { exc.Message}", logsEnable);
-                this.Close();
+            catch {
+                writeLogs($"Medium  =>  '{filePath}' not found", logsEnable);
             }
-
         }
     }
 }
