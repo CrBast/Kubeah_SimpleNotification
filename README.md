@@ -15,6 +15,8 @@
   <ol>
       <li><a href="#Documentation">Documentation</a></li>
     </ol>
+  <li>Create notification files | <a href="https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/notification_sample.xml">Example</a></li>
+  <li>Run the application</li>
 </ol>
 <br>
 <h3>Create notification</h3>
