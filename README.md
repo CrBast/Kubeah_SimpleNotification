@@ -38,3 +38,5 @@
 <br>
 <h3 id="Documentation">Documentation</h3>
 <h4><a href="https://github.com/CrBast/Kubeah_SimpleNotification/wiki">The wiki</a></h4>
+<h3>Who uses Kubeah_SimpleNotification</h3>
+<h5><a href="https://github.com/CrBast/KubeahChat">Kubeah Chat</a> </h5>
