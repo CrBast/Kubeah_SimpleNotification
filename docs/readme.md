@@ -3,7 +3,7 @@
 <center><img src="https://raw.githubusercontent.com/CrBast/Kubeah_SimpleNotification/master/files/introduction.gif"></center>
 <br>
 <h3>Integration</h3>
-<ol>
+<ol> 
   <li><a href="https://github.com/CrBast/Kubeah_SimpleNotification/releases">Download the latest version</a></li> 
   <li>Create config
     <ol>
