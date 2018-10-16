@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<param>
+	<param name="content" value="Comment tu vas?"/>
+	<param name="title" value="New notification"/>
+	<param name="time" value="50"/>
+	<param name="opacity" value="0,5"/>
+</param>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<param>
+	<param name="title" value="Firefox"/>
+	<param name="backgroundColor" value="#ff8c00"/>
+	<param name="time" value="10"/>
+</param>

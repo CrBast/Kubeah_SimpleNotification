@@ -23,6 +23,7 @@
  * */
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace Windows_Notification
 {
     public partial class Notification : Form
     {
-        public Boolean logsEnable = false;//Default = false
+        public Boolean logsEnable = true;//Default = false
         public string logsPath = "";
         public Boolean saveNotifications = false;//Default = false
         public Boolean styleFile = false;
@@ -63,6 +64,11 @@ namespace Windows_Notification
 
         private void Notification_Load(object sender, EventArgs e)
         {
+            // Check if another process exist
+            // Bug : Multi process
+            Process[] processes = Process.GetProcessesByName("Windows_Notification");
+            if (processes.Length > 0)
+                processes[0].CloseMainWindow();
             /*
              * Basic initialization
             */
