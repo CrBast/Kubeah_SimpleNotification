@@ -66,12 +66,9 @@ namespace Windows_Notification
         {
             // Check if another process exist
             // Bug : Multi process
-            Process[] processes = Process.GetProcessesByName("Windows_Notification");
-            if (processes.Length > 0)
-                processes[0].CloseMainWindow();
-            /*
-             * Basic initialization
-            */
+            Process[] pname = Process.GetProcessesByName(AppDomain.CurrentDomain.FriendlyName.Remove(AppDomain.CurrentDomain.FriendlyName.Length - 4));
+            if (pname.Length > 1)
+                pname.Where(p => p.Id != Process.GetCurrentProcess().Id).First().Kill();
             pbxLogo.Visible = false;
             lblTitle.Width = 17;
             lblTitle.Height = 9;
