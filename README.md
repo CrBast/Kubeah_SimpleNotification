@@ -12,6 +12,9 @@
 4. Create notification files | ![Example](https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/notification_sample.xml)
 5. Run the application
 
+## NuGet
+### Will soon be available
+
 ## Create notification
 1. You must define the notifications folder path in the config file
 2. Create notification file 
