@@ -19,6 +19,9 @@
   <li>Run the application</li>
 </ol>
 <br>
+<h3>NuGet</h3>
+<h4>Will soon be available</h4>
+<br>
 <h3>Create notification</h3>
 <ol> 
   <li>You must define the notifications folder path in the config file</li>
