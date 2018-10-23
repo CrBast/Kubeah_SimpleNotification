@@ -1,4 +1,3 @@
-# Kubeah_SimpleNotification - Windows
 <h4>Simple Windows Notifications creator</h4>
 <center><img src="https://raw.githubusercontent.com/CrBast/Kubeah_SimpleNotification/master/files/introduction.gif"></center>
 <br>
