@@ -1,13 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestBasic
+namespace Show
 {
     [TestClass]
-    public class UnitTestMain
+    public class Show
     {
         [TestMethod]
-        public void Show()
+        public void ShowSimple()
         {
             Kubeah_SimpleNotification.Notification notification = new Kubeah_SimpleNotification.Notification("Hi");
             notification.Show();
