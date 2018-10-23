@@ -40,6 +40,10 @@ namespace Windows_Notification
         public Boolean styleFile = false;
         public string styleFilePath = "";
         public string directoryPath = ".\\Notifications";
+        public string title = "";
+        public string content = "";
+        Color backgroundColor = System.Drawing.ColorTranslator.FromHtml("#1F1F1F");
+        int interval = 5000;
         public Notification()
         {
             InitializeComponent();
@@ -75,12 +79,11 @@ namespace Windows_Notification
             tbxContent.Width = 20;
             tbxContent.Height = 33;
             tbxContent.Size = new System.Drawing.Size(301, 52);
-            lblTitle.Text = "";
-            tbxContent.Text = "";
-            timer.Interval = 5000;
-            Color nightGray = System.Drawing.ColorTranslator.FromHtml("#1F1F1F");
-            this.BackColor = nightGray;
-            tbxContent.BackColor = nightGray;
+            lblTitle.Text = title;
+            tbxContent.Text = content;
+            timer.Interval = interval;
+            this.BackColor = backgroundColor;
+            tbxContent.BackColor = backgroundColor;
 
 
             /*
