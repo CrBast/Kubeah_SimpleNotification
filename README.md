@@ -27,5 +27,5 @@
 ## Documentation
 ![The wiki](https://github.com/CrBast/Kubeah_SimpleNotification/wiki)
 
-### Who uses Kubeah_SimpleNotification?
+## Who uses Kubeah_SimpleNotification?
 ![Kubeah Chat](https://github.com/CrBast/KubeahChat)
