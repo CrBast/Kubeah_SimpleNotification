@@ -21,6 +21,8 @@ namespace KNotifications
             ShowApp();
         }
 
+        public KNotification(){ }
+
         public void SetContent(string value) => AddOrOverwriteData(DataTypes.Content(), value);
 
         public void SetTitle(string value) => AddOrOverwriteData(DataTypes.Title(), value);
