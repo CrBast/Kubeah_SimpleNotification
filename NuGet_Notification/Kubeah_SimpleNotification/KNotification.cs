@@ -1,42 +1,31 @@
-﻿using System;
+﻿/* Please copy the complete directory : ./NuGet_Notification/App
+ * !! Check the "Windows_Notification.exe" application version
+ * 
+ * Licence : https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/LICENSE
+ * */
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Linq;
 using System.IO;
+using System.Diagnostics;
 
 namespace KNotifications
 {
     class KNotification
     {
-        // Example 1 ; true
+        // Example 1 ; hello
         public static Dictionary<int, string> data = new Dictionary<int, string>();
         public void Show()
         {
             ShowApp();
         }
 
-        public void setContent(string value)
-        {
-            AddOrOverwriteData(DataTypes.Content(), value);
-        }
+        public void SetContent(string value) => AddOrOverwriteData(DataTypes.Content(), value);
 
-        public void setTitle(string value)
-        {
-            AddOrOverwriteData(DataTypes.Title(), value);
-        }
+        public void SetTitle(string value) => AddOrOverwriteData(DataTypes.Title(), value);
 
-        public void setOpacity(double value)
-        {
-            AddOrOverwriteData(DataTypes.Content(), DoubleWithComma(value));
-        }
-
-        public void setContent(string value)
-        {
-            AddOrOverwriteData(DataTypes.Content(), value);
-        }
+        public void SetOpacity(double value) => AddOrOverwriteData(DataTypes.Content(), DoubleWithComma(value));
 
         // Static methods
         public static void Show(string title, string content)
@@ -79,7 +68,7 @@ namespace KNotifications
             foreach (KeyValuePair<int, string> entry in data)
             {
                 xmlWriter.WriteStartElement("param");
-                xmlWriter.WriteAttributeString("name", DataTypes.getName(entry.Key));
+                xmlWriter.WriteAttributeString("name", DataTypes.GetName(entry.Key));
                 xmlWriter.WriteAttributeString("value", RemoveInvalidCharacters(entry.Value));
                 xmlWriter.WriteEndElement();
             }
