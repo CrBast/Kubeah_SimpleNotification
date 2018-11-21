@@ -59,6 +59,9 @@ namespace KNotifications
         /// <returns>Dictionary<(int) id, (string) definition></returns>
         public Dictionary<int, string> GetDict() => data;
 
-        private static int getId(string temp) => Convert.ToInt32(data.FirstOrDefault(x => x.Value == temp));
+        private static int getId(string temp)
+        {
+            return data.FirstOrDefault(x => x.Value == temp).Key;
+        }
     }
 }

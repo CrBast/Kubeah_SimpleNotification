@@ -1,4 +1,4 @@
-﻿/* Please copy the complete directory : ./NuGet_Notification/App
+﻿/* Please copy the complete directory : ./NuGet_Notification/App on solution folder
  * !! Check the "Windows_Notification.exe" application version
  * 
  * Licence : https://github.com/CrBast/Kubeah_SimpleNotification/blob/master/LICENSE
@@ -12,7 +12,7 @@ using System.Diagnostics;
 
 namespace KNotifications
 {
-    class KNotification
+    public class Notification
     {
         // Example 1 ; hello
         public static Dictionary<int, string> data = new Dictionary<int, string>();
@@ -21,13 +21,26 @@ namespace KNotifications
             ShowApp();
         }
 
-        public KNotification(){ }
+        public Notification(){ }
 
         public void SetContent(string value) => AddOrOverwriteData(DataTypes.Content(), value);
 
         public void SetTitle(string value) => AddOrOverwriteData(DataTypes.Title(), value);
 
-        public void SetOpacity(double value) => AddOrOverwriteData(DataTypes.Content(), DoubleWithComma(value));
+        public void SetOpacity(double value) => AddOrOverwriteData(DataTypes.Opacity(), DoubleWithComma(value));
+
+        public Notification(string title, string content)
+        {
+            AddOrOverwriteData(DataTypes.Title(), title);
+            AddOrOverwriteData(DataTypes.Content(), content);
+        }
+
+        public Notification(string title, string content, double opacity)
+        {
+            AddOrOverwriteData(DataTypes.Title(), title);
+            AddOrOverwriteData(DataTypes.Content(), content);
+            AddOrOverwriteData(DataTypes.Content(), DoubleWithComma(opacity));
+        }
 
         // Static methods
         public static void Show(string title, string content)
@@ -64,7 +77,7 @@ namespace KNotifications
         {
             Directory.CreateDirectory("./App/notifications");
             string title = DateTime.Now.ToString("dd.MM.yyyy_HH.mm.ss");
-            XmlWriter xmlWriter = XmlWriter.Create("./App/notifications" + title + ".xml");
+            XmlWriter xmlWriter = XmlWriter.Create("./App/notifications/" + title + ".xml");
             xmlWriter.WriteStartDocument();
             xmlWriter.WriteStartElement("param");
             foreach (KeyValuePair<int, string> entry in data)
@@ -77,8 +90,8 @@ namespace KNotifications
             xmlWriter.WriteEndElement();
             xmlWriter.Close();
             XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load("./App/notifications" + title + ".xml");
-            xmlDoc.Save("./App/notifications" + title + ".xml");
+            xmlDoc.Load("./App/notifications/" + title + ".xml");
+            xmlDoc.Save("./App/notifications/" + title + ".xml");
 
 
             var currentDirectory = Directory.GetCurrentDirectory();
