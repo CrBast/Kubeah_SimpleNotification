@@ -14,6 +14,7 @@
 
 ## NuGet
 ### Will soon be available
+[Wiki - Documentation](https://github.com/CrBast/Kubeah_SimpleNotification/wiki/NUGET---Documentation)
 
 ## Create notification
 1. You must define the notifications folder path in the config file
