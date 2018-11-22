@@ -2,6 +2,7 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using KNotifications;
+using System.Drawing;
 
 namespace Basic
 {
@@ -14,6 +15,13 @@ namespace Basic
         [TestMethod]
         public void SetContent() => notification.SetContent("This is the content");
         [TestMethod]
+        public void SetBackgroundColor() => notification.SetBackgroundColor(Color.Blue);
+        [TestMethod]
+        public void SetTime() => notification.SetTime(10);
+        [TestCleanup]
         public void Show() => notification.Show();
+
+        
     }
+    
 }

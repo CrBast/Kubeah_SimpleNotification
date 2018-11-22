@@ -9,13 +9,14 @@ using System.Text;
 using System.Xml;
 using System.IO;
 using System.Diagnostics;
+using System.Drawing;
 
 namespace KNotifications
 {
     public class Notification
     {
         // Example 1 ; hello
-        public static Dictionary<int, string> data = new Dictionary<int, string>();
+        private static Dictionary<int, string> data = new Dictionary<int, string>();
         public void Show()
         {
             ShowApp();
@@ -23,18 +24,59 @@ namespace KNotifications
 
         public Notification(){ }
 
+        /// <summary>
+        /// Content
+        /// </summary>
+        /// <param name="value">(String) Content</param>
         public void SetContent(string value) => AddOrOverwriteData(DataTypes.Content(), value);
 
+        /// <summary>
+        /// Title
+        /// </summary>
+        /// <param name="value">(String) Title</param>
         public void SetTitle(string value) => AddOrOverwriteData(DataTypes.Title(), value);
 
+        /// <summary>
+        /// Opacity of the notification
+        /// </summary>
+        /// <param name="value">(double) Opacity</param>
         public void SetOpacity(double value) => AddOrOverwriteData(DataTypes.Opacity(), DoubleWithComma(value));
 
+        /// <summary>
+        /// Background color
+        /// </summary>
+        /// <param name="color">(Color) Color</param>
+        public void SetBackgroundColor(Color color) => AddOrOverwriteData(DataTypes.BackgroundColor(), ColorToStringHexa(color));
+
+        /// <summary>
+        /// Text color
+        /// </summary>
+        /// <param name="color">(Color) Color</param>
+        public void SetFontColor(Color color) => AddOrOverwriteData(DataTypes.FontColor(), ColorToStringHexa(color));
+
+        /// <summary>
+        /// Display duration in seconds
+        /// </summary>
+        /// <param name="seconds">(int) Seconds</param>
+        public void SetTime(int seconds) => AddOrOverwriteData(DataTypes.Time(), seconds.ToString());
+
+        /// <summary>
+        /// Notification object (Title, Content)
+        /// </summary>
+        /// <param name="title">(String) Title</param>
+        /// <param name="content">(String) Content</param>
         public Notification(string title, string content)
         {
             AddOrOverwriteData(DataTypes.Title(), title);
             AddOrOverwriteData(DataTypes.Content(), content);
         }
 
+        /// <summary>
+        /// Notification object (Title, Content, Opacity)
+        /// </summary>
+        /// <param name="title">(String) Title</param>
+        /// <param name="content">(String) Content</param>
+        /// <param name="opacity">(Double) Opacity</param>
         public Notification(string title, string content, double opacity)
         {
             AddOrOverwriteData(DataTypes.Title(), title);
@@ -43,12 +85,24 @@ namespace KNotifications
         }
 
         // Static methods
+
+        /// <summary>
+        /// Create notification (Title, Content)
+        /// </summary>
+        /// <param name="title">(String) Title</param>
+        /// <param name="content">(String) Content</param>
         public static void Show(string title, string content)
         {
             AddOrOverwriteData(DataTypes.Title(), title);
             AddOrOverwriteData(DataTypes.Content(), content);
         }
 
+        /// <summary>
+        /// Create notification (Title, Content, Opacity)
+        /// </summary>
+        /// <param name="title">(String) Title</param>
+        /// <param name="content">(String) Content</param>
+        /// <param name="opacity">(Double) Opacity</param>
         public static void Show(string title, string content, double opacity)
         {
             AddOrOverwriteData(DataTypes.Title(), title);
@@ -56,12 +110,10 @@ namespace KNotifications
             AddOrOverwriteData(DataTypes.Content(), DoubleWithComma(opacity));
         }
 
-        
-
         // PRIVATE
-        private static string ColorToStringHexa()
+        private static string ColorToStringHexa(Color color)
         {
-            return "";
+            return $"#{color.R.ToString("X2")}{color.G.ToString("X2")}{color.B.ToString("X2")}";
         }
 
         private static string DoubleWithComma(double value)
