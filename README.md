@@ -13,7 +13,7 @@
 5. Run the application
 
 ## NuGet
-### Will soon be available
+
 [Wiki - Documentation](https://github.com/CrBast/Kubeah_SimpleNotification/wiki/NUGET---Documentation)
 
 ## Create notification
