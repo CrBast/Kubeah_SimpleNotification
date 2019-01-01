@@ -168,11 +168,10 @@ namespace Windows_Notification
             { 
                 try
                 {
-                    TextWriter tw = new StreamWriter($"{logsPath}", true);
-                    // write a line of text to the file
-                    tw.WriteLine($"{ DateTime.Now}   :   { text }");
-                    // close the stream
-                    tw.Close();
+                    if (!File.Exists(logsPath))
+                        File.Create(logsPath);
+                    else
+                        File.AppendAllText(logsPath, $"{ DateTime.Now}   :   { text }" + Environment.NewLine);
                 }
                 catch {}
             }
